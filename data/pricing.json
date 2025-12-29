@@ -1,0 +1,294 @@
+[
+  {
+    "sku": "SKU-001",
+    "price": 481,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 1,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-002",
+    "price": 165,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-003",
+    "price": 338,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 4,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-004",
+    "price": 191,
+    "currency": "USD",
+    "promo": null,
+    "rating": 1,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-005",
+    "price": 494,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 5,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-006",
+    "price": 314,
+    "currency": "USD",
+    "promo": null,
+    "rating": 4,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-007",
+    "price": 191,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 4,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-008",
+    "price": 254,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-009",
+    "price": 138,
+    "currency": "USD",
+    "promo": null,
+    "rating": 3,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-010",
+    "price": 426,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 5,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-011",
+    "price": 272,
+    "currency": "USD",
+    "promo": null,
+    "rating": 1,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-012",
+    "price": 86,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-013",
+    "price": 372,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-014",
+    "price": 189,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 4,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-015",
+    "price": 215,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-016",
+    "price": 391,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-017",
+    "price": 374,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-018",
+    "price": 238,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 4,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-019",
+    "price": 477,
+    "currency": "USD",
+    "promo": null,
+    "rating": 5,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-020",
+    "price": 216,
+    "currency": "USD",
+    "promo": null,
+    "rating": 2,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-021",
+    "price": 159,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 4,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-022",
+    "price": 230,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 1,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-023",
+    "price": 260,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 2,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-024",
+    "price": 183,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 5,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-025",
+    "price": 175,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 3,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-026",
+    "price": 218,
+    "currency": "USD",
+    "promo": null,
+    "rating": 1,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  },
+  {
+    "sku": "SKU-027",
+    "price": 216,
+    "currency": "USD",
+    "promo": 15,
+    "rating": 5,
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "sku": "SKU-028",
+    "price": 158,
+    "currency": "USD",
+    "promo": "10%",
+    "rating": 4,
+    "tags": [
+      "nuevo",
+      "oferta"
+    ]
+  }
+]
