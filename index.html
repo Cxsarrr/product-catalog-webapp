@@ -7,7 +7,16 @@
 </head>
 <body>
     <h1>Product Catalog</h1>
-    
+    <form class="buscador" id="buscador">
+        <input type="search" id="searchInput" placeholder="Buscar...">
+        <select id="categoryFilter">…</select>
+        <input type="number" id="minPrice" min="0" placeholder="Min">
+        <input type="number" id="maxPrice" min="0" placeholder="Max">
+        <button id="resetFilters">Limpiar filtros</button>
+    </form>
+    <h2>Products</h2>
+    <div id="products"></div>
+
     <script src="src/scripts/main.js"></script>
 </body>
 </html>
