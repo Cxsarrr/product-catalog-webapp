@@ -91,11 +91,7 @@ function setupFilters(){
 
 
 function populateCategories(selectEl){
-  const defaultOption = document.createElement('option');
-  defaultOption.value = '';
-  defaultOption.textContent = 'Todas';
-  selectEl.appendChild(defaultOption);
-  
+
   const categories = [...new Set(allProducts.map(p => p.category ))].sort();
   categories.forEach(cat => {
     const opt = document.createElement('option');
