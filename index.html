@@ -4,19 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog - Web Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Product Catalog</h1>
-    <form class="buscador" id="buscador">
-        <input type="search" id="searchInput" placeholder="Buscar...">
-        <select id="categoryFilter">…</select>
-        <input type="number" id="minPrice" min="0" placeholder="Min">
-        <input type="number" id="maxPrice" min="0" placeholder="Max">
-        <button id="resetFilters">Limpiar filtros</button>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Product Catalog</h1>
+    
+    <form class="bg-white rounded-lg shadow p-6 m-8" id="buscador">
+      <div class="flex flex-wrap gap-4">
+        <input 
+          type="search" 
+          id="searchInput" 
+          placeholder="Buscar..." 
+          class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        
+        <select 
+          id="categoryFilter" 
+          class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="">Todas las categorías</option>
+        </select>
+        
+        <input 
+          type="number" 
+          id="minPrice" 
+          placeholder="Precio mín" 
+          class="w-32 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        
+        <input 
+          type="number" 
+          id="maxPrice" 
+          placeholder="Precio máx" 
+          class="w-32 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        
+        <button 
+          id="resetFilters" 
+          type="button"
+          class="bg-red-500 rounded-lg px-4 py-2 text-white hover:bg-red-600 transition">
+          Limpiar
+        </button>
+      </div>
     </form>
-    <h2>Products</h2>
+
     <div id="products"></div>
 
     <script src="src/scripts/main.js"></script>
+  </div>
 </body>
 </html>
