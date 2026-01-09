@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Producto</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <a href="index.html" class="text-blue-600 hover:underline">
+        ← Volver al catálogo
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- Nombre del producto -->
+    <h1 id="product-name" class="text-3xl font-bold mb-8 text-gray-800">
+      <!-- JS inserta el nombre -->
+    </h1>
+
+    <!-- Layout -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Galería / Slider -->
+      <div>
+        <div
+          id="product-gallery"
+          class="relative rounded-xl overflow-hidden bg-white shadow"
+        >
+          <!-- JS inserta imágenes / slider -->
+        </div>
+      </div>
+
+      <!-- Información del producto -->
+      <div
+        id="product-info"
+        class="bg-white rounded-xl shadow p-6 space-y-4"
+      >
+        <!-- JS inserta:
+             - Precio
+             - Promo
+             - Rating
+             - Stock
+             - Categoría
+             - Tags
+        -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="src/scripts/details.js"></script>
+
+</body>
+</html>

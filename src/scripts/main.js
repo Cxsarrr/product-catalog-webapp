@@ -18,12 +18,11 @@ async function loadPricing(){
 function renderProducts(products) {
   const container = document.querySelector("#products");
 
-  if (products.length === 0) {
+    if (products.length === 0) {
     container.innerHTML =
-      '<p class="text-center text-gray-500 text-xl py-10">No se encontraron productos</p>';
+    '<p class="text-center text-white-500 text-xl py-10">No se encontraron productos</p>';
     return;
   }
-
   container.classList.add(
     "grid",
     "grid-cols-1",
@@ -32,37 +31,50 @@ function renderProducts(products) {
     "gap-6",
     "mt-8"
   );
-
+  
+  
   container.innerHTML = products.map(product => `
-    <div class="relative shadow-lg hover:scale-105 border border-gray-200 rounded-2xl">
+    <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white border border-white/10 shadow-2xl hover:translate-y-1 transition-transform duration-200">
 
       ${product.promo ? `
         <span class="absolute right-4 top-4 bg-red-500 text-white px-3 py-1 rounded text-sm z-10">
           ${product.promo} OFF
         </span>
       ` : ''}
-
-      <img class="h-64 object-cover border-b border-gray-200 w-full"
-           src="${product.images?.[0]}"
-           alt="${product.name}">
-
-      <h3 class="text-xl font-bold text-gray-800 px-4 py-2">${product.name ?? 'N/A'}</h3>
-
-      <p class="text-gray-500 px-4 py-2">SKU: ${product.sku}</p>
-
-      <span class="block font-bold text-2xl px-4 text-green-500">
-        $${product.price ?? 'N/A'}
+      
+      
+      <img class="h-64 object-cover border-b border-white-200 w-full" src="${product.images?.[0]}" alt="${product.name}">
+      <h3 class="text-xl font-bold text-white-800 px-4 py-2">${product.name ?? 'N/A'}</h3>
+      
+      
+      <p class="text-white-500 px-4 py-2 gap-3">${product.sku}</p>
+      
+      <span class="block font-bold text-2xl px-4 text-red-500">
+      $${product.price ?? 'N/A'}
       </span>
-
-      <div class="text-sm py-2 px-4">
-        <p>Rating: ${product.rating ?? '-'}/5</p>
-        <p>Stock: ${product.stock ?? '0'} unidades</p>
-        <p>Categoría: ${product.category ?? 'N/A'}</p>
+      
+    <div class="text-sm py-2 px-4">
+      <div class="flex items-center gap-3 py-2">
+        <div class="${product.stock < 5 ? 'bg-red-600 animate-pulse' : product.stock < 15 ? 'bg-yellow-500 animate-pulse' : 'bg-green-500 animate-pulse'} w-5 h-5 rounded-full text-sm"></div>
+        <p class="text-white-800">Solo queda(n) ${product.stock ?? '0'} en stock (hay más unidades en camino).</p>
       </div>
+    </div>
+    
+    <div class="text-sm py-2 px-4">
+    <span>${product.rating}/5</span>
+    ${
+        Array(5).fill(0).map((_, i) => {
+          return i < (product.rating ?? 0) ? '⭐' : '';
+        }).join('')
+      }
+    </div>
 
-      <p class="py-2 px-4">
-        Tags: ${product.tags?.map(tag => `<span>${tag}</span>`).join(' ') || '-'}
+      <p class="text-1xl absolute right-4 mb-2 py-2 text-white-800">${product.category ?? 'N/A'}</p>
+      
+      <p class="py-2 px-4 text-1xl text-white-800">
+        🏷️${product.tags?.map(tag => `<span>${tag}</span>`).join(' ') || '-'}
       </p>
+      <p></p>
     </div>
   `).join('');
 }
