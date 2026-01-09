@@ -15,21 +15,56 @@ async function loadPricing(){
   }
 }
 
-function renderProducts(products){
-    const container = document.querySelector("#products");
-    container.innerHTML = products.map(product => `
-      <div>
-        <h3>${product.name ?? 'N/A'}</h3>
-        <p>SKU: ${product.sku}</p>
+function renderProducts(products) {
+  const container = document.querySelector("#products");
+
+  if (products.length === 0) {
+    container.innerHTML =
+      '<p class="text-center text-gray-500 text-xl py-10">No se encontraron productos</p>';
+    return;
+  }
+
+  container.classList.add(
+    "grid",
+    "grid-cols-1",
+    "md:grid-cols-2",
+    "lg:grid-cols-3",
+    "gap-6",
+    "mt-8"
+  );
+
+  container.innerHTML = products.map(product => `
+    <div class="relative shadow-lg hover:scale-105 border border-gray-200 rounded-2xl">
+
+      ${product.promo ? `
+        <span class="absolute right-4 top-4 bg-red-500 text-white px-3 py-1 rounded text-sm z-10">
+          ${product.promo} OFF
+        </span>
+      ` : ''}
+
+      <img class="h-64 object-cover border-b border-gray-200 w-full"
+           src="${product.images?.[0]}"
+           alt="${product.name}">
+
+      <h3 class="text-xl font-bold text-gray-800 px-4 py-2">${product.name ?? 'N/A'}</h3>
+
+      <p class="text-gray-500 px-4 py-2">SKU: ${product.sku}</p>
+
+      <span class="block font-bold text-2xl px-4 text-green-500">
+        $${product.price ?? 'N/A'}
+      </span>
+
+      <div class="text-sm py-2 px-4">
+        <p>Rating: ${product.rating ?? '-'}/5</p>
+        <p>Stock: ${product.stock ?? '0'} unidades</p>
         <p>Categoría: ${product.category ?? 'N/A'}</p>
-        <p>Stock: ${product.stock ?? '0'}</p>
-        <p>Precio: $${product.price ?? 'N/A'} ${product.currency ?? ''}</p>
-        <p>Promo: ${product.promo ?? '-'}</p>
-        <p>Rating: ${product.rating ?? '-'}</p>
-        <p>Tags: ${product.tags?.map(tag => `<span>${tag}</span>`).join(' ') || '-'}</p>
-        <img src="${product.images?.[0]}" alt="${product.name}">
       </div>
-    `).join('');
+
+      <p class="py-2 px-4">
+        Tags: ${product.tags?.map(tag => `<span>${tag}</span>`).join(' ') || '-'}
+      </p>
+    </div>
+  `).join('');
 }
 
 async function loadInventory(){
