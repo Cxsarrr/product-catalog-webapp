@@ -1,24 +1,118 @@
-// 1. Leer SKU desde la URL
-function getSkuFromUrl() {}
+function getSkuFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const sku = params.get("sku");
 
-// 2. Mostrar error controlado
-function renderError(message) {}
+    if(!sku){
+        console.error("SKU no encontrado en la URL");
+        return null;
+    }
+        console.log("SKU Recibido:", sku)
+        return sku;
+}
 
-// 3. Renderizar nombre del producto
-function renderProductName(product) {}
+async function loadPricing(){
+    try{
+    const response = await fetch("data/pricing.json")
+        if(!response.ok){
+            throw new Error(`Error loading data: ${response.status}`);
+        }
+        return await response.json(); 
+    }
+    catch(error){
+        console.error(error)
+        return null;
+    }
+}
 
-// 4. Renderizar información del producto
-function renderProductInfo(product) {}
 
-// 5. Renderizar galería / slider
-function renderProductGallery(images) {}
 
-// 6. Inicializar slider (librería externa)
-function initSlider() {}
+async function loadInventory(){
+    try{
+        const response = await fetch("data/inventory.xml")
+        if(!response.ok){
+            throw new Error(`Error loading data: ${response.status}`);
+        }
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "text/xml")
 
-// 7. Inicializar la página
-async function initDetailsPage() {}
-  
+        const productNodes = xmlDoc.querySelectorAll("product")
+        const products = []
+
+        productNodes.forEach(node => {
+            products.push({
+                sku: node.getAttribute("sku"),
+                name: node.querySelector("name")?.textContent,
+                category:node.querySelector("category")?.textContent,
+                stock:Number(node.querySelector("stock")?.textContent ?? 0),
+                images:Array.from(node.querySelectorAll("img")).map(img=> img.textContent ),
+            });
+        });
+        return products;
+    }catch(error){
+        console.error("Error loading data:", error)
+        return null;
+    }
+}
+
+
+
+function mergeProducts(sku, inventory, pricing) {
+  const invProduct = inventory.find(p => p.sku === sku);
+  const priceProduct = pricing.find(p => p.sku === sku);
+
+  if (!invProduct) return null;
+
+  return {
+    ...invProduct,
+    ...priceProduct
+  };
+}
+
+function findProducts(){
+
+}
+
+function renderProduct(product) {
+  const container = document.querySelector("#productInfo");
+
+  container.innerHTML = `
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      ${
+        product.images.map(img => `
+          <img 
+            src="${img}" 
+            alt="${product.name}"
+            style="width:100%; max-width:600px; margin-bottom:10px;"
+          />
+        `).join('')
+      }
+    </div>
+
+    <h1>${product.name}</h1>
+    <p>SKU: ${product.sku}</p>
+    <p>Precio: $${product.price ?? 'N/A'}</p>
+    <p>Stock: ${product.stock}</p>
+  `;
+}
+
+
+async function initDetailsPage() {
+  const sku = getSkuFromUrl();
+  if (!sku) return;
+
+  const pricing = await loadPricing();
+  const inventory = await loadInventory();
+
+  const product = mergeProducts(sku, inventory, pricing);
+  if (!product) {
+    console.error("Producto no encontrado");
+    return;
+  }
+
+  renderProduct(product);
+}
+
+
 initDetailsPage();
