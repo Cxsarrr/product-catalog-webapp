@@ -1,0 +1,15 @@
+{
+  "name": "product-catalog-webapp",
+  "version": "1.0.0",
+  "description": "Product catalog web application",
+  "scripts": {
+    "build": "tailwindcss -i ./styles/input.css -o ./styles/output.css",
+    "watch": "tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "swiper": "^12.0.3"
+  }
+}
