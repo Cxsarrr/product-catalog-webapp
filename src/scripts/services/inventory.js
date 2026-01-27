@@ -2,7 +2,7 @@ import { fetchText } from "./api.js";
 
 export async function loadInventory() {
 	try {
-		const xmlText = await fetchText("../data/inventory.xml");
+		const xmlText = await fetchText("../../data/inventory.xml");
 		const parser = new DOMParser();
 		const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 

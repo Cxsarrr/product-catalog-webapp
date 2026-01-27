@@ -50,7 +50,7 @@ export function renderProductDetails(product) {
   `;
 
   new Swiper('.swiper', {
-    loop: true,
+    loop: (product.images || []).length > 2,
     spaceBetween: 20,
     pagination: {
       el: '.swiper-pagination',

@@ -66,8 +66,8 @@ export function renderProducts(products, isFavorite, onToggleFavorite) {
 				</div>
 
 				<a href="details.html?sku=${product.sku}"
-					class="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded-lg font-semibold transition text-center block">
-					Ver detalles
+					class="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded-lg font-semibold transition text-center block mb-2">
+					View Details
 				</a>
 
 				<p class="absolute bottom-4 right-4 text-sm text-gray-400">

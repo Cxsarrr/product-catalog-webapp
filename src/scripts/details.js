@@ -1,7 +1,8 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import Swiper from '../../node_modules/swiper/swiper.mjs';
+import Navigation from '../../node_modules/swiper/modules/navigation.mjs';
+import Pagination from '../../node_modules/swiper/modules/pagination.mjs';
+
+Swiper.use([Navigation, Pagination]);
 import { loadPricing } from "./services/pricing.js";
 import { loadInventory } from "./services/inventory.js";
 import { mergeProducts } from "./services/merge.js";
